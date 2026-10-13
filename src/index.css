@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sosapient CRM design tokens (purple brand). */
+:root {
+  color-scheme: light;
+  --brand-primary: #5727B2;
+  --brand-primary-hover: #472096;
+  --brand-primary-active: #391778;
+  --brand-light: #F3EEFF;
+  --brand-surface: #E8DEFF;
+  --brand-border: #D4C4FF;
+  --color-primary: #5727B2;
+  --color-primary-hover: #472096;
+  --color-primary-subtle: #F3EEFF;
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-text: #111827;
+  --color-muted: #6B7280;
+  --color-border: #E5E7EB;
+  --color-success: #16A34A;
+  --color-warning: #D97706;
+  --color-danger: #DC2626;
+}
+.dark {
+  color-scheme: dark;
+  --brand-primary: #9B7BF5;
+  --brand-primary-hover: #7446E3;
+  --brand-primary-active: #BFA6FF;
+  --brand-light: #1A0B38;
+  --brand-surface: #2A1159;
+  --brand-border: #391778;
+  --color-primary: #9B7BF5;
+  --color-primary-hover: #7446E3;
+  --color-primary-subtle: #1A0B38;
+  --color-background: #020617;
+  --color-surface: #0F172A;
+  --color-text: #F1F5F9;
+  --color-muted: #94A3B8;
+  --color-border: #1E293B;
+}
+
+body { @apply bg-slate-50 text-slate-900 antialiased; }
+.dark body { @apply bg-slate-950 text-slate-100; }
+:focus-visible { outline: 2px solid #5727B2; outline-offset: 2px; }
+.dark :focus-visible { outline-color: #9B7BF5; }
+
+/* Slim, theme-aware scrollbar for the sidebar nav. */
+.crm-scroll::-webkit-scrollbar { width: 6px; }
+.crm-scroll::-webkit-scrollbar-thumb { @apply rounded-full bg-slate-300 dark:bg-slate-700; }
+.crm-scroll { scrollbar-width: thin; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
